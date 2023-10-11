@@ -2,11 +2,11 @@
 Это обычный logging, но с более широкими настройками
 
 # Применение
-
+```
 from custom_logger import Logging
 log = Logging().get_logger()
 log.info('Test my logs')
-
+```
 # Описание параметров класса Logging
 1. log_file_enabled - запись логов в файл. Принимает булево значение True/False. Default = True
 2. log_console_enabled - запись логов в консоль. Принимает булево значение True/False. Default = True
@@ -28,16 +28,16 @@ log.info('Test my logs')
 ### stream
 Вы можете определить свой stream. Для этого нужно:
 
+```
 from custom_logger import Stream
 
 class YourCustomStream(Stream):
     def write(self, msg: str) -> None:
         do_something
 
-Далее передать его
-
 from custom_logger import Logging
 log = Logging(stream = [YourCustomStream()]).get_logger()
+```
 
 ### base_json_fields
 Словарь с базовыми полям, ключи можно изменять, а ключи статичный.
