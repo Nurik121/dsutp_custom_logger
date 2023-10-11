@@ -1,9 +1,9 @@
 import logging
 from logging.handlers import RotatingFileHandler
 
-from json_formatter import JsonFormatter
-from stream import HTTPSINK, Consol, Stream
-from tracer import CustomStreamHandler
+from .json_formatter import JsonFormatter
+from .stream import HTTPSINK, Consol, Stream
+from .tracer import CustomStreamHandler
 
 
 class Logging:

@@ -3,7 +3,7 @@
 
 # Применение
 ```
-from custom_logger import Logging
+from dsutp_custom_logger import Logging
 log = Logging().get_logger()
 log.info('Test my logs')
 ```
@@ -29,7 +29,7 @@ log.info('Test my logs')
 Вы можете определить свой stream. Для этого нужно:
 
 ```
-from custom_logger import Stream, Logging
+from dsutp_custom_logger import Stream, Logging
 
 class YourCustomStream(Stream):
     def write(self, msg: str) -> None:
@@ -39,7 +39,7 @@ log = Logging(stream = [YourCustomStream()]).get_logger()
 ```
 
 ### base_json_fields
-Словарь с базовыми полям, ключи можно изменять, а ключи статичны.
+Словарь с базовыми полям, ключи можно изменять, а ключи статичный.
 Данные поля заполняются системными данными.
 ```
 {"level": "levelname", 
