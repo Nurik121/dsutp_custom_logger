@@ -29,19 +29,19 @@ log.info('Test my logs')
 Вы можете определить свой stream. Для этого нужно:
 
 ```
-from custom_logger import Stream
+from custom_logger import Stream, Logging
 
 class YourCustomStream(Stream):
     def write(self, msg: str) -> None:
         do_something
 
-from custom_logger import Logging
 log = Logging(stream = [YourCustomStream()]).get_logger()
 ```
 
 ### base_json_fields
 Словарь с базовыми полям, ключи можно изменять, а ключи статичный.
 Данные поля заполняются системными данными.
+```
 {"level": "levelname", 
 "message": "message", 
 "loggerName": "name", 
@@ -53,13 +53,15 @@ log = Logging(stream = [YourCustomStream()]).get_logger()
 "filename":"filename",
 "module":"module",
 "pathname":"pathname"}
+```
 
 ### custon_json_fields
 Можно задать свои кастомные поля с уже заполнеными данными
+```
 {""RequestID":"123",
 "Span":"344",
 ...}
-
+```
 
 # Тесты
 
