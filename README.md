@@ -3,7 +3,7 @@
 
 # Применение
 ```
-from custom_logger import Logging
+from dsutp_custom_logger import Logging
 log = Logging().get_logger()
 log.info('Test my logs')
 ```
@@ -29,7 +29,7 @@ log.info('Test my logs')
 Вы можете определить свой stream. Для этого нужно:
 
 ```
-from custom_logger import Stream, Logging
+from dsutp_custom_logger import Stream, Logging
 
 class YourCustomStream(Stream):
     def write(self, msg: str) -> None:

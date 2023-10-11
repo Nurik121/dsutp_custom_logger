@@ -1,6 +1,6 @@
 import logging
 
-from stream import Stream
+from .stream import Stream
 
 
 class CustomStreamHandler(logging.StreamHandler):
