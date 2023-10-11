@@ -24,6 +24,8 @@ class HTTPSINK(Stream):
         with requests.Session() as session:
             session.post(
                 url=self.url,
-                data=json.dumps({'level': json.loads(msg)['level'], 'message': msg}, ensure_ascii=False).encode('UTF-8'),
+                data=json.dumps({'level': json.loads(msg)['level'], 'message': msg}, ensure_ascii=False).encode(
+                    'UTF-8'
+                ),
                 headers={'content-type': 'application/json'},
             )

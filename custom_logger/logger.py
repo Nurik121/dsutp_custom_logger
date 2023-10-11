@@ -29,21 +29,17 @@ class Logging:
             )
         if log_console_enabled:
             stream.append(Consol())
-        if log_httpsink_enabled:
+        if log_httpsink_enabled and log_httpsink_url:
             stream.append(HTTPSINK(log_httpsink_url))
         body_handlers.append(CustomStreamHandler(stream))
-        json_formatter = JsonFormatter(fmt_dict=base_json_fields, custom_dict=custon_json_fields)
+        json_formatter = JsonFormatter(
+            fmt_dict=base_json_fields, custom_dict=custon_json_fields, time_format=log_structured_datetimeformat
+        )
         [i.setFormatter(json_formatter) for i in body_handlers]
         logging.basicConfig(
             level=log_level,
-            format='%(asctime)s %(levelname)s %(thread)d - %(message)s-%(module)s',
-            datefmt=log_structured_datetimeformat,
             handlers=body_handlers,
         )
 
     def get_logger(self):
         return logging
-
-    
-log = Logging(log_httpsink_enabled = False).get_logger()
-log.info('gege')
