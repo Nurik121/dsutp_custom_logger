@@ -1,0 +1,15 @@
+[flake8]
+max-line-length = 120
+
+ignore =
+    # S101: Use of assert detected
+    S101
+    E126
+    # E128: continuation line under-indented for visual
+    E128
+    # Possible hardcoded password
+    S105
+
+per-file-ignores =
+    test_*.py: S101,DAR101,D100
+    */__init__.py: F401, W292
