@@ -9,7 +9,7 @@ from setuptools import setup
 :copyright: (c) 2023 Nurtaza
 """
 
-version = '1.0.0'
+version = '1.0.1'
 
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
